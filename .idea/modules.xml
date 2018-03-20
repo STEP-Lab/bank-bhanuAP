@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/bank-bhanuAP.iml" filepath="$PROJECT_DIR$/.idea/modules/bank-bhanuAP.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/bank-bhanuAP_main.iml" filepath="$PROJECT_DIR$/.idea/modules/bank-bhanuAP_main.iml" group="bank-bhanuAP" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/bank-bhanuAP_test.iml" filepath="$PROJECT_DIR$/.idea/modules/bank-bhanuAP_test.iml" group="bank-bhanuAP" />
+    </modules>
+  </component>
+</project>
