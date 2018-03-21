@@ -5,6 +5,9 @@
       <module fileurl="file://$PROJECT_DIR$/bank-bhanuAP.iml" filepath="$PROJECT_DIR$/bank-bhanuAP.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/bank-bhanuAP_main.iml" filepath="$PROJECT_DIR$/.idea/modules/bank-bhanuAP_main.iml" group="bank-bhanuAP" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/bank-bhanuAP_test.iml" filepath="$PROJECT_DIR$/.idea/modules/bank-bhanuAP_test.iml" group="bank-bhanuAP" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/library.iml" filepath="$PROJECT_DIR$/.idea/modules/library.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/library_main.iml" filepath="$PROJECT_DIR$/.idea/modules/library_main.iml" group="library" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/library_test.iml" filepath="$PROJECT_DIR$/.idea/modules/library_test.iml" group="library" />
     </modules>
   </component>
 </project>
