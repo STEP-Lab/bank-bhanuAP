@@ -5,9 +5,16 @@ public class Account {
   private final String number;
   private float balance = 0;
 
-  public Account(String name, String number) {
+  public Account(String name, String number) throws IncorrectAccNumException {
+    if(!this.isValidAccNumber(number)) {
+      throw new IncorrectAccNumException();
+    }
     this.name = name;
     this.number = number;
+  }
+
+  private boolean isValidAccNumber(String accNumber) {
+    return accNumber.matches("\\d{4}-\\d{4}");
   }
 
   public String getName() {
