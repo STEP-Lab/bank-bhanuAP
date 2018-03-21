@@ -11,26 +11,26 @@ public class AccountTest {
   @Test
   public void getName() {
     Account harvar = new Account("HarVar","1912-7864");
-    assertThat(harvar.getName(),is("HarVar"));
+    assertThat(harvar.getName(), is("HarVar"));
   }
 
   @Test
   public void getAccNumber() {
     Account bhanu = new Account("Bhanu","1278-6524");
-    assertThat(bhanu.getAccNumber(),is("1278-6524"));
+    assertThat(bhanu.getAccNumber(), is("1278-6524"));
   }
 
   @Test
   public void getBalance() {
     Account harsha = new Account("Harsha","1912-1234");
-    assertThat(harsha.getBalance(),is(0));
+    assertThat(harsha.getBalance(), is(0F));
   }
 
   @Test
   public void creditPosAmount() throws NegAmountException {
     Account teja = new Account("Teja","1234-5421");
-    assertThat(teja.credit(1000),is(1000));
-    assertThat(teja.credit(9000),is(10000));
+    assertThat(teja.credit(1000), is(1000F));
+    assertThat(teja.credit(9000), is(10000F));
   }
 
   @Test (expected = NegAmountException.class)
@@ -43,7 +43,7 @@ public class AccountTest {
   public void debitPosAmount() throws NegAmountException, InsufficientBalanceException {
     Account varma = new Account("Varma", "1234-5678");
     varma.credit(200);
-    assertThat(varma.debit(100), is(100));
+    assertThat(varma.debit(100), is(100F));
   }
 
   @Test (expected = NegAmountException.class)
