@@ -3,15 +3,13 @@ package com.thoughtworks.step;
 import java.util.Date;
 import java.util.Objects;
 
-public abstract class Transaction {
+public class Transaction {
+  private final Date date;
   protected final float amount;
-  protected final String to;
-  protected Date date;
 
-  public Transaction(Date date, float amount,String to) {
+  public Transaction(Date date, float amount) {
     this.date = date;
     this.amount = amount;
-    this.to = to;
   }
 
   @Override
@@ -19,13 +17,12 @@ public abstract class Transaction {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     Transaction that = (Transaction) o;
-    return Float.compare(that.amount, amount) == 0 &&
-            Objects.equals(to, that.to);
+    return Float.compare(that.amount, amount) == 0;
   }
 
   @Override
   public int hashCode() {
 
-    return Objects.hash(amount, to);
+    return Objects.hash(amount);
   }
 }

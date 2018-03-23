@@ -1,7 +1,7 @@
 package com.thoughtworks.step;
 
-public class NegAmountException extends Exception {
-  NegAmountException() {
+public class InvalidAmountException extends Exception {
+  InvalidAmountException() {
     super("Balance should be a positive integer");
   }
 }

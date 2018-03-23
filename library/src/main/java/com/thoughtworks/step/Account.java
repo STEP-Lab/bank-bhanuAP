@@ -4,6 +4,7 @@ public class Account {
   private final String name;
   private final String number;
   private float balance = 0;
+  protected Transactions transactions = new Transactions();
 
   public Account(String holder, String number) {
     this.name = holder;
@@ -22,20 +23,21 @@ public class Account {
     return balance;
   }
 
-  public float credit(int amount) throws NegAmountException {
+  public float credit(int amount) throws InvalidAmountException {
     if(amount <= 0) {
-      throw new NegAmountException();
+      throw new InvalidAmountException();
     }
     return balance += amount;
   }
 
-  public float debit(int amount) throws NegAmountException, InsufficientBalanceException {
+  public float debit(int amount) throws InvalidAmountException, InsufficientBalanceException {
     if(amount <= 0) {
-      throw new NegAmountException();
+      throw new InvalidAmountException();
     }
     if(balance < amount){
       throw new InsufficientBalanceException();
     }
+    transactions.addDebitTransaction(amount);
     return balance -= amount;
   }
 }
