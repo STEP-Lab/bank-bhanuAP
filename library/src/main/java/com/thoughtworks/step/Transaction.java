@@ -5,7 +5,7 @@ import java.util.Objects;
 
 public class Transaction {
   private final Date date;
-  protected final float amount;
+  private final float amount;
 
   public Transaction(Date date, float amount) {
     this.date = date;
@@ -22,7 +22,6 @@ public class Transaction {
 
   @Override
   public int hashCode() {
-
     return Objects.hash(amount);
   }
 }

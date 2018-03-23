@@ -27,6 +27,7 @@ public class Account {
     if(amount <= 0) {
       throw new InvalidAmountException();
     }
+    transactions.addCreditTransaction(amount);
     return balance += amount;
   }
 

@@ -58,10 +58,18 @@ public class AccountTest {
   }
 
   @Test
-  public void checksTransactionsOfAcc() throws InvalidAmountException, InsufficientBalanceException {
+  public void checksDebitTransactionsOfAccount() throws InvalidAmountException, InsufficientBalanceException {
+    account.credit(1000);
+    assertEquals(account.transactions.list.size(),1);
+    assertThat(account.getBalance(),is(1000F));
+  }
+
+  @Test
+  public void checksCreditTransactionsOfAccount() throws InvalidAmountException, InsufficientBalanceException {
     account.credit(1000);
     account.debit(500);
-    assertEquals(account.transactions.list.size(),1);
+    assertEquals(account.transactions.list.size(),2);
+    assertThat(account.getBalance(),is(500F));
   }
 }
 
