@@ -6,8 +6,7 @@ import org.junit.Test;
 import java.util.Date;
 
 import static org.hamcrest.core.Is.is;
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertThat;
+import static org.junit.Assert.*;
 
 public class TransactionTest {
   private Transaction transaction;
@@ -16,21 +15,35 @@ public class TransactionTest {
   @Before
   public void setUp() throws Exception {
     date = new Date();
-    transaction = new Transaction(date,1000,"credit");
+    transaction = new Transaction(date,1000,"credit", "self");
   }
 
   @Test
   public void mustRecordCorrectTransaction() {
-    assertEquals(transaction.hashCode(),new Transaction(date,1000, "credit").hashCode());
+    assertEquals(transaction.hashCode(),new Transaction(date,1000, "credit", "self").hashCode());
   }
 
   @Test
   public void checkTransactionObject() {
-    transaction.equals(new Transaction(date,1000, "credit"));
+    transaction.equals(new Transaction(date,1000, "credit", "self"));
   }
 
   @Test
   public void shouldCheckAmount() {
     assertThat(transaction.getAmount(),is(1000F));
   }
+
+  @Test
+  public void shouldCheckTypeOfCreditTransaction() {
+    assertTrue(transaction.isCredit());
+    assertFalse(transaction.isDebit());
+  }
+
+  @Test
+  public void shouldCheckTypeOfDebitTransaction() {
+    transaction = new Transaction(date,100,"debit", "self");
+    assertTrue(transaction.isDebit());
+    assertFalse(transaction.isCredit());
+  }
+  
 }

@@ -7,11 +7,13 @@ public class Transaction {
   private final Date date;
   private final float amount;
   private String type;
+  private final String accountNumber;
 
-  public Transaction(Date date, float amount, String type) {
+  public Transaction(Date date, float amount, String type, String accountNumber) {
     this.date = date;
     this.amount = amount;
     this.type = type;
+    this.accountNumber = accountNumber;
   }
 
   @Override
@@ -33,4 +35,11 @@ public class Transaction {
     return amount;
   }
 
+  public boolean isCredit() {
+    return type == "credit";
+  }
+
+  public boolean isDebit() {
+    return type == "debit";
+  }
 }

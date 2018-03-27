@@ -27,7 +27,7 @@ public class Account {
     if(amount <= 0) {
       throw new InvalidAmountException();
     }
-    transactions.addCreditTransaction(amount);
+    transactions.addCreditTransaction(amount, "self");
     return balance += amount;
   }
 
@@ -38,7 +38,7 @@ public class Account {
     if(balance < amount){
       throw new InsufficientBalanceException();
     }
-    transactions.addDebitTransaction(amount);
+    transactions.addDebitTransaction(amount,"self");
     return balance -= amount;
   }
 }
