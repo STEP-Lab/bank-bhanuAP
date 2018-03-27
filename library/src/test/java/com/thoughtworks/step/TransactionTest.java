@@ -45,5 +45,28 @@ public class TransactionTest {
     assertTrue(transaction.isDebit());
     assertFalse(transaction.isCredit());
   }
-  
+
+  @Test
+  public void shouldRecordTransferToTransaction() {
+    TransferToTransaction toTransaction = new TransferToTransaction(date,100,"debit","1234-6789");
+    assertThat(toTransaction.hashCode(),is(new TransferToTransaction(date,100,"debit","1234-6789").hashCode()));
+  }
+
+  @Test
+  public void checksTransferToObject() {
+    TransferToTransaction toTransaction = new TransferToTransaction(date,100,"debit","1234-6789");
+    toTransaction.equals(new TransferToTransaction(date,100,"debit","1234-6789"));
+  }
+
+  @Test
+  public void shouldRecordTransferFromTransaction() {
+    TransferFromTransaction fromTransaction = new TransferFromTransaction(date, 100, "debit", "1234-6789");
+    assertThat(fromTransaction.hashCode(),is(new TransferFromTransaction(date,100,"debit","1234-6789").hashCode()));
+  }
+
+  @Test
+  public void checksTransferFromObject() {
+    TransferFromTransaction fromTransaction = new TransferFromTransaction(date,100,"debit","1234-6789");
+    fromTransaction.equals(new TransferFromTransaction(date,100,"debit","1234-6789"));
+  }
 }

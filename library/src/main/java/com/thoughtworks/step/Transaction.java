@@ -22,13 +22,14 @@ public class Transaction {
     if (o == null || getClass() != o.getClass()) return false;
     Transaction that = (Transaction) o;
     return Float.compare(that.amount, amount) == 0 &&
-            Objects.equals(type, that.type);
+            Objects.equals(type, that.type) &&
+            Objects.equals(accountNumber, that.accountNumber);
   }
 
   @Override
   public int hashCode() {
 
-    return Objects.hash(amount, type);
+    return Objects.hash(amount, type, accountNumber);
   }
 
   public float getAmount() {
