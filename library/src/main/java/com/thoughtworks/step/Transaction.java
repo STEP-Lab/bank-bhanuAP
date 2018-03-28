@@ -43,4 +43,8 @@ public class Transaction {
   public boolean isDebit() {
     return type == "debit";
   }
+
+  public Date getDate() {
+    return date;
+  }
 }

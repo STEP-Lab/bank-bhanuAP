@@ -41,32 +41,32 @@ public class TransactionTest {
 
   @Test
   public void shouldCheckTypeOfDebitTransaction() {
-    transaction = new Transaction(date,100,"debit", "self");
+    transaction = new Transaction(date,100, "debit","self");
     assertTrue(transaction.isDebit());
     assertFalse(transaction.isCredit());
   }
 
   @Test
   public void shouldRecordTransferToTransaction() {
-    TransferToTransaction toTransaction = new TransferToTransaction(date,100,"debit","1234-6789");
-    assertThat(toTransaction.hashCode(),is(new TransferToTransaction(date,100,"debit","1234-6789").hashCode()));
+    TransferToTransaction toTransaction = new TransferToTransaction(date,100,"1234-6789");
+    assertThat(toTransaction.hashCode(),is(new TransferToTransaction(date,100,"1234-6789").hashCode()));
   }
 
   @Test
   public void checksTransferToObject() {
-    TransferToTransaction toTransaction = new TransferToTransaction(date,100,"debit","1234-6789");
-    toTransaction.equals(new TransferToTransaction(date,100,"debit","1234-6789"));
+    TransferToTransaction toTransaction = new TransferToTransaction(date,100,"1234-6789");
+    toTransaction.equals(new TransferToTransaction(date,100,"1234-6789"));
   }
 
   @Test
   public void shouldRecordTransferFromTransaction() {
-    TransferFromTransaction fromTransaction = new TransferFromTransaction(date, 100, "debit", "1234-6789");
-    assertThat(fromTransaction.hashCode(),is(new TransferFromTransaction(date,100,"debit","1234-6789").hashCode()));
+    TransferFromTransaction fromTransaction = new TransferFromTransaction(date, 100, "1234-6789");
+    assertThat(fromTransaction.hashCode(),is(new TransferFromTransaction(date,100,"1234-6789").hashCode()));
   }
 
   @Test
   public void checksTransferFromObject() {
-    TransferFromTransaction fromTransaction = new TransferFromTransaction(date,100,"debit","1234-6789");
-    fromTransaction.equals(new TransferFromTransaction(date,100,"debit","1234-6789"));
+    TransferFromTransaction fromTransaction = new TransferFromTransaction(date,100,"1234-6789");
+    fromTransaction.equals(new TransferFromTransaction(date,100,"1234-6789"));
   }
 }

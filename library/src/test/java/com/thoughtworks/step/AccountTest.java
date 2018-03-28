@@ -72,4 +72,3 @@ public class AccountTest {
     assertThat(account.getBalance(),is(500F));
   }
 }
-
